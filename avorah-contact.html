@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///C:/Users/Daniel/Downloads/avorah-contact_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Avorah Sound</title>
+
+  <!-- Fonts matching Avorah's palette exactly -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./avorah-contact_files/css2" rel="stylesheet">
+
+  <style>
+    /* ─── Brand tokens ─── */
+    :root {
+      --cream:       #fdf9f5;
+      --brown:       #8d5c31;
+      --brown-dark:  #744d2b;
+      --sage:        #8e9d9b;
+      --sage-light:  #c4d0cf;
+      --blush:       #fdd8d8;
+      --line-green:  #73e36d;
+      --text-dark:   #3a2a1a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: 'Radley', Georgia, serif;
+      min-height: 100vh;
+    }
+
+    /* ─── Decorative top line (matches site's green rule) ─── */
+    .top-rule {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--line-green) 30%, var(--line-green) 70%, transparent 100%);
+      opacity: 0.75;
+    }
+
+    /* ─── Page wrapper ─── */
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* ─── Hero title block ─── */
+    .hero {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 48px;
+      background: var(--sage-light);
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Radley', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 400;
+      color: var(--brown);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title span {
+      display: block;
+      font-weight: 700;
+    }
+
+    .hero-sub {
+      margin-top: 1.25rem;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--brown-dark);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-inline: auto;
+    }
+
+    .hero::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: var(--sage);
+      margin: 2rem auto 0;
+    }
+
+    /* ─── Two-column layout ─── */
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 680px) {
+      .layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    /* ─── Left panel — details ─── */
+    .details {
+      padding-top: 0.5rem;
+    }
+
+    .details-heading {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-item {
+      margin-bottom: 1.6rem;
+      border-left: 2px solid var(--sage-light);
+      padding-left: 1rem;
+    }
+
+    .detail-label {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.3rem;
+    }
+
+    .detail-value {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--brown-dark);
+    }
+
+    .detail-value a {
+      color: var(--brown);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sage-light);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .detail-value a:hover {
+      color: var(--brown-dark);
+      border-color: var(--brown);
+    }
+
+    .tagline {
+      margin-top: 2.5rem;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--sage);
+      line-height: 1.7;
+    }
+
+    /* ─── Form panel ─── */
+    .form-card {
+      background: white;
+      border: 1px solid var(--sage-light);
+      border-radius: 2px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 32px rgba(141, 92, 49, 0.07);
+      position: relative;
+    }
+
+    /* top accent stripe */
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sage-light), var(--blush), var(--sage-light));
+    }
+
+    .form-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--brown);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-subtitle {
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--sage);
+      margin-bottom: 2rem;
+    }
+
+    /* ─── Form fields ─── */
+    .field {
+      margin-bottom: 1.4rem;
+    }
+
+    .field label {
+      display: block;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.45rem;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      background: var(--cream);
+      border: 1px solid var(--sage-light);
+      border-radius: 1px;
+      padding: 0.75rem 0.9rem;
+      font-family: 'Radley', serif;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(142, 157, 155, 0.12);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 130px;
+      line-height: 1.6;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      .field-row { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Submit button — matches Avorah's warm brown aesthetic ─── */
+    .btn-submit {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: var(--brown);
+      color: var(--cream);
+      border: none;
+      border-radius: 1px;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.15s, box-shadow 0.25s;
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--brown-dark);
+      box-shadow: 0 6px 20px rgba(116, 77, 43, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    /* ─── Success / error states ─── */
+    .form-message {
+      display: none;
+      padding: 1rem 1.2rem;
+      border-radius: 1px;
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .form-message.success {
+      background: #f0f7f0;
+      border: 1px solid #b5d6b5;
+      color: #3a6040;
+    }
+
+    .form-message.error {
+      background: #fdf0f0;
+      border: 1px solid #e0b5b5;
+      color: #7a3535;
+    }
+
+    /* ─── Privacy note ─── */
+    .privacy-note {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--sage);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ─── Bottom decorative rule ─── */
+    .bottom-rule {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--sage-light) 40%, var(--sage-light) 60%, transparent 100%);
+      margin-top: 4rem;
+      opacity: 0.6;
+    }
+
+    /* ─── Fade-in on load ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero        { animation: fadeUp 0.8s ease both; }
+    .details     { animation: fadeUp 0.8s 0.15s ease both; }
+    .form-card   { animation: fadeUp 0.8s 0.25s ease both; }
+
+    /* ─── Loading spinner ─── */
+    .btn-submit.loading {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .btn-submit.loading::after {
+      content: ' …';
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="top-rule"></div>
+
+  <div class="page">
+
+    <!-- Hero heading -->
+    <div class="hero">
+      <p class="hero-eyebrow">Avorah Sound · Essex</p>
+      <h1 class="hero-title">
+        Get in
+        <span>Touch</span>
+      </h1>
+      <p class="hero-sub">
+        Whether you have a question, want to book a private session, or simply
+        feel a gentle pull to reach out — you are so welcome here.
+      </p>
+    </div>
+
+    <!-- Two-column body -->
+    <div class="layout">
+
+      <!-- Left: contact details -->
+      <aside class="details">
+        <p class="details-heading">Find us</p>
+
+        <div class="detail-item">
+          <p class="detail-label">Email</p>
+          <p class="detail-value">
+            <a href="file:///C:/cdn-cgi/l/email-protection#196a786b787159786f766b7871377a76376c72"><span class="__cf_email__" data-cfemail="b5c6d4c7d4ddf5d4c3dac7d4dd9bd6da9bc0de">[email&nbsp;protected]</span></a>
+          </p>
+        </div>
+
+        <div class="detail-item">
+          <p class="detail-label">Instagram</p>
+          <p class="detail-value">
+            <a href="https://www.instagram.com/__avorah__" target="_blank" rel="noopener">@__avorah__</a>
+          </p>
+        </div>
+
+        <div class="detail-item">
+          <p class="detail-label">Facebook</p>
+          <p class="detail-value">
+            <a href="https://www.facebook.com/Avorah" target="_blank" rel="noopener">Avorah</a>
+          </p>
+        </div>
+
+        <div class="detail-item">
+          <p class="detail-label">Location</p>
+          <p class="detail-value">Essex, UK<br>Various hired locations</p>
+        </div>
+
+        <p class="tagline">
+          "The more at peace you become,<br>
+          the less you tolerate chaos."
+        </p>
+      </aside>
+
+      <!-- Right: contact form -->
+      <div class="form-card">
+        <h2 class="form-title">Send a message</h2>
+        <p class="form-subtitle">I'll be in touch as soon as I can.</p>
+
+        <!--
+          ════════════════════════════════════════════════════════
+          SETUP INSTRUCTIONS — read before going live
+          ════════════════════════════════════════════════════════
+          This form uses Formspree (free, no backend needed).
+
+          1. Go to https://formspree.io and create a free account.
+          2. Click "New Form" → give it a name (e.g. "Avorah Contact").
+          3. Copy the endpoint URL — it looks like:
+               https://formspree.io/f/xabcxyz1
+          4. Replace the action value below with YOUR endpoint.
+          5. Done! Submissions land directly in sarah@avorah.co.uk
+             (Formspree forwards to whichever email you register with).
+
+          Alternatively, change action="mailto:sarah@avorah.co.uk"
+          to open the visitor's native email client instead.
+          ════════════════════════════════════════════════════════
+        -->
+        <form id="contact-form" action="https://formspree.io/f/mykboabd" method="POST">
+
+          <!-- Formspree: reply-to is set from the email field -->
+          <input type="hidden" name="_subject" value="New message from Avorah website">
+
+          <div class="field-row">
+            <div class="field">
+              <label for="first-name">First name</label>
+              <input id="first-name" name="first_name" type="text" placeholder="Sarah" required="" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="last-name">Last name</label>
+              <input id="last-name" name="last_name" type="text" placeholder="Smith" autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required="" autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="enquiry">Type of enquiry</label>
+            <select id="enquiry" name="enquiry_type">
+              <option value="" disabled="" selected="">Please select…</option>
+              <option value="Group Soundbath">Group Soundbath booking</option>
+              <option value="Solo Soundbath">Solo Soundbath / private session</option>
+              <option value="Soundbath Circle">Soundbath Circle (private group)</option>
+              <option value="Retreat / corporate hire">Retreat or corporate hire</option>
+              <option value="General question">General question</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" placeholder="Tell me a little about what you&#39;re looking for…" required=""></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submit-btn">
+            Send Message
+          </button>
+
+          <div class="form-message success" id="success-msg">
+            Thank you — your message has been received. I'll be in touch soon. 🌿
+          </div>
+          <div class="form-message error" id="error-msg">
+            Something went wrong. Please try again, or email me directly at
+            <a href="file:///C:/cdn-cgi/l/email-protection#27544655464f6746514855464f09444809524c"><span class="__cf_email__" data-cfemail="7e0d1f0c1f163e1f08110c1f16501d11500b15">[email&nbsp;protected]</span></a>.
+          </div>
+
+          <p class="privacy-note">
+            Your details are used only to respond to your enquiry and are never shared.
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+
+    <div class="bottom-rule"></div>
+  </div>
+
+  <script data-cfasync="false" src="file:///C:/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const form      = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMsg = document.getElementById('success-msg');
+    const errorMsg   = document.getElementById('error-msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      submitBtn.classList.add('loading');
+      submitBtn.textContent = 'Sending';
+      successMsg.style.display = 'none';
+      errorMsg.style.display   = 'none';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          successM</script></body></html>
